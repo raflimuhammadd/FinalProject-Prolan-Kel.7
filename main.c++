@@ -23,5 +23,9 @@ void tukar();
 int main()
 {
   cout << "anyong gais\n";
-  // blablabla
+  cout << "SELAMAT DATANG DI E KOS \n";
+  cout << "MELAYANI MAHASISWA / MAHASISWI";
+  cout << "=====\n";
+
+  cout << "Keluar";
 }
