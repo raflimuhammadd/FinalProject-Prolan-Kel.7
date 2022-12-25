@@ -4,6 +4,10 @@
 ```
 ### Juragan Kost
 ```
+# Screnshot Aplikasi
+### Tampilan Awal
+![nyoba outputan awal](https://cdn.discordapp.com/attachments/884240786227617822/1056690647765110844/image.png)
+
 ## ANGGOTA KEL 7
 1. 21081010254 Shafira Zahrah Hidayat
 2. 21081010255 Ahmad Wahyu Adi Putra
