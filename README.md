@@ -10,7 +10,7 @@ Juragan Kost
 3. 21081010258 Satria Farras Athallansyah
 4. 21081010259 Raditya Lungguk Satya Putra
 5. 21081010262 Muhammad Rafli Pratama
-6. 21081010266 Achmad Sirajul Fahm
+6. 21081010266 Achmad Sirajul Fahmi
 
 ## Metode yang digunakan
 ```
