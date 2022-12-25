@@ -2,7 +2,7 @@
 
 ## Judul
 ```
-###Juragan Kost
+### Juragan Kost
 ```
 ## ANGGOTA KEL 7
 1. 21081010254 Shafira Zahrah Hidayat
