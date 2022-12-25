@@ -23,5 +23,5 @@ void tukar();
 int main()
 {
   cout << "anyong gais\n";
-  // blablabla
+  cout << "SELAMAT DATANG DI E KOS \n";
 }
