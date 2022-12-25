@@ -24,6 +24,7 @@ int main()
 {
   cout << "anyong gais\n";
   cout << "SELAMAT DATANG DI E KOS \n";
+  cout << "MELAYANI MAHASISWA / MAHASISWI";
   cout << "=====\n";
 
   cout << "Keluar";
