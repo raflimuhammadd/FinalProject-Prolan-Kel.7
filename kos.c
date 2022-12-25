@@ -348,11 +348,177 @@ void sortharga(){
 }
 
 void cari_tipe(){
-    //... (rafli)
+    system("cls");
+	FILE *cartip;
+	int count=0,i,j = 0,test=0, caritipe, flag = 0;
+	system("cls");
+	cartip=fopen("JURAGANKOS.txt","r");
+	while(fscanf(cartip,"%d %d %[^;]; %d %lf",&kst.id, &kst.tipe, kst.alamat, &kst.jum_penghuni , &kst.harga)!=EOF) {
+		sorts[count].tipe = kst.tipe;
+		sorts[count].jum_penghuni = kst.jum_penghuni;
+		sorts[count].id = kst.id;
+		sorts[count].harga = kst.harga;
+		strcpy(sorts[count].alamat ,kst.alamat);
+        count++;
+		test=1;
+	}
+    int simpan[count];	
+	
+	printf("==============   PENCARIAN DATA   =============\n\n");
+    printf("\nMasukkan TIPE yang Dicari : ");
+    scanf("%d", &caritipe);
+	
+    for(i = 0; i < count; i++){
+        if(sorts[i].tipe == caritipe){
+            simpan[j] = i;
+            flag = 1;
+            j++;
+        }
+    }
+    printf("\n%s\t%s\t%s\t\t%s\t%s \n\n", "ID","Tipe", "Alamat", "J.kamar", "Harga");
+    if(flag == 1){
+        for(i = 0; i <= j-1; i++){
+            printf("%d\t%d\t%s\t\t%d\t%.lf \n", sorts[simpan[i]].id, sorts[simpan[i]].tipe, sorts[simpan[i]].alamat, sorts[simpan[i]].jum_penghuni , sorts[simpan[i]].harga);
+        }
+    }
+    else{
+        printf("Data Tipe Not Found!");
+    }
+	
+    resetMemory();
+	fclose(cartip);
+	if(test==0){
+            printf("\nData tidak ditemukan !\a\a\a");
+            erase_invalid:
+            printf("\nInput 0 untuk mencoba lagi, 1 untuk ke menu utama and 2 untuk keluar :");
+			switch(getch()){
+            	case '0': 
+					cari_tipe();
+            		break;
+            	case '1': 
+					main();
+            		break;
+            	case '2': 
+					close();
+            		break;
+            	default:printf("\nMaaf Kesalahan Input !");
+            		getche();
+            		goto erase_invalid;
+			}
+    }
+    else {
+    	erase_valid:
+		printf("\nInput 1 untuk ke menu utama, 2 untuk coba lagi, and 0 untuk keluar :");
+        switch(getch()){
+       		case '1': 
+			   	main();
+       			break;
+            case '2':
+                cari_tipe();
+                break;
+       		case '0': 
+			   	close();
+       			break;
+       		default:printf("\nMaaf Kesalahan Input !");
+        		getche();
+        		goto erase_valid;
+        }
+    }
 }
 
 void cari_alamat(){
-    //... (rafli)
+    system("cls");
+	FILE *alamatt;
+	int count=0,i,j,test=0,pilih;
+    char carialamat[60];
+	system("cls");
+	alamatt = fopen("JURAGANKOS.txt","r");
+	while(fscanf(alamatt,"%d %d %[^;]; %d %lf",&kst.id, &kst.tipe, kst.alamat, &kst.jum_penghuni ,&kst.harga)!=EOF) {
+		sorts[count].tipe = kst.tipe;
+		sorts[count].jum_penghuni = kst.jum_penghuni;
+		sorts[count].id = kst.id;
+		sorts[count].harga = kst.harga;
+		strcpy(sorts[count].alamat ,kst.alamat);
+		count++;
+		test=1;
+	}	
+
+	for(i = 1; i <= count; i++){
+		sorts2[i] = sorts[i];
+    	j = i - 1;
+        while(j >= 0 && (strcmp(sorts[j].alamat, sorts2[i].alamat) > 0)){
+                sorts[j+1] = sorts[j];
+                j--;
+        }
+		sorts[j+1] = sorts2[i];
+    }
+	
+    fflush(stdin);
+    printf("==============   PENCARIAN DATA   =============\n\n");
+    printf("\nMasukkan Alamat yang Dicari : ");
+    gets(carialamat);
+    int mid, low = 0, flag =0, high = count;
+    while(low <= high && flag == 0){
+        mid = (low + high)/2;
+        if((strcmp(sorts[mid].alamat, carialamat) == 0)){
+            flag = 1;
+        }
+        else if((strcmp(carialamat, sorts[mid].alamat) > 0)){
+            high = high;
+            low = mid + 1;
+        }
+        else{
+            low = low;
+            high = mid - 1;
+        }
+    }
+    printf("\n%s\t%s\t%s\t\t%s\t%s \n\n", "ID","Tipe", "Alamat", "J.kamar", "Harga");
+    if(flag == 1){
+        printf("%d\t%d\t%s\t\t%d\t%.lf \n", sorts[mid].id, sorts[mid].tipe, sorts[mid].alamat, sorts[mid].jum_penghuni , sorts[mid].harga);
+    }
+    else{
+        printf("Data Alamat kos Not Found!");
+    }
+
+    resetMemory();
+	fclose(alamatt);
+	if(test==0){
+            printf("\nData tidak ditemukan !\a\a\a");
+            erase_invalid:
+            printf("\nInput 0 untuk mencoba lagi, 1 untuk ke menu utama and 2 untuk keluar :");
+			switch(getch()){
+            	case '0': 
+					cari_alamat();
+            		break;
+            	case '1': 
+					main();
+            		break;
+            	case '2': 
+					close();
+            		break;
+            	default:printf("\nMaaf Kesalahan Input !");
+            		getche();
+            		goto erase_invalid;
+			}
+    }
+    else{
+    	erase_valid:
+		printf("\nInput 1 untuk ke menu utama, 2 coba lagi, and 0 untuk keluar :");
+        switch(getch()){
+       		case '1': 
+			   	main();
+       			break;
+            case '2':
+                cari_alamat();
+                break;
+       		case '0': 
+			   	close();
+       			break;
+       		default:printf("\nMaaf Kesalahan Input !");
+        		getche();
+        		goto erase_valid;
+        }
+    }
 }
 
 void cari_harga(){
