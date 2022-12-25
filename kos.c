@@ -32,6 +32,7 @@ void cari_alamat();
 void cari_harga();
 void lihat_kamar_kosong();
 void sewa_kos();
+void close();
 
 struct kos{
     int id,tipe;
@@ -328,7 +329,7 @@ void update_kos(){
 }
 
 void hapus_kos(){
-    //... (farras)
+    //... (radit)
 }
 
 void sorttipe(){
@@ -583,36 +584,7 @@ void cari_harga(){
 }
 
 void lihat_kamar_kosong(){
-    system("cls");
-    FILE *lihat_kamar_kosong;
-	int test=0;
-	lihat_kamar_kosong = fopen("JURAGANSEWA.txt","r");
-	printf("\n================ JURAGAN KOST ================\n\n");
-	printf("%s\t%s\t%s\t\t%s\t%s\t%s\t\t%s \n\n", "ID","Tipe", "Alamat", "J.kamar", "Harga", "Nama", "NIK");
-	while(fscanf(lihat_kamar_kosong,"%d %d %[^;]; %d %lf %[^;]; %lf",&kst.id, &kst.tipe, kst.alamat, &kst.jum_penghuni , &kst.harga, kst.nama, &kst.NIK)!=EOF){
-            printf("%d\t%d\t%s\t%d\t%.lf\t%s\t%.lf\n", kst.id, kst.tipe, kst.alamat, kst.jum_penghuni ,kst.harga, kst.nama, kst.NIK);
-            test++;
-		}
-	printf("\n");
-	printf("\nBanyak kos Yang Terjual : %d ", test);
-	fclose(lihat_kamar_kosong);
-
-    memset(&kst, 0, sizeof(kst));
-	if(test==0){
-		system("cls");
-		printf ("\nData Kosong ! \n");
-	}
-	list_invalid:
-    printf("\n\nEnter 1 untuk menu utama dan 0 untuk keluar : ");
-    switch(getch()){
-    	case '1': main();
-        	break;
-        case '0': close();
-        	break;
-        default:printf("\nMaaf Kesalahan Input !");
-        	getche();
-        	goto list_invalid;
- 	}
+    
 }
 
 void sewa_kos(){
