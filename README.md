@@ -1,9 +1,8 @@
 ## UAS PEMROGRAMAN LANJUT E081 KEL 7
 
 ## Judul
-```
-### Juragan Kost
-```
+**Juragan Kost**
+
 # Screnshot Aplikasi
 ### Tampilan Awal
 ![nyoba outputan awal](https://cdn.discordapp.com/attachments/884240786227617822/1056690647765110844/image.png)
