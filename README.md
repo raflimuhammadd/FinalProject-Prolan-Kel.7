@@ -71,7 +71,7 @@ Catatan:
 4) Selamat menggunakan aplikasi Juragan Kos!
 ```
 
-## Syarat
+## Penutup
 ```
 -
 ```
