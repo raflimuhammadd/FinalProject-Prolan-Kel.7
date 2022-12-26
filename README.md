@@ -5,7 +5,20 @@
 
 # Screnshot Aplikasi
 ### Tampilan Awal
-![nyoba outputan awal](https://cdn.discordapp.com/attachments/884240786227617822/1056690647765110844/image.png)
+![pemilik dan menyewa](https://cdn.discordapp.com/attachments/884240786227617822/1057020830388863147/image.png)
+
+### Tampilan Menu Pemilik Kos
+![Pemilik kos](https://cdn.discordapp.com/attachments/884240786227617822/1057020915843608626/image.png)
+
+### Tampilan Menu Penyewa
+![Penyewa](https://cdn.discordapp.com/attachments/884240786227617822/1057022255554629682/image.png)
+
+### Tampilan Sorting
+![Screenshot (85)](https://cdn.discordapp.com/attachments/884240786227617822/1057021184874659940/image.png)
+
+### Tampilan Searching
+![Screenshot (86)](https://cdn.discordapp.com/attachments/884240786227617822/1057022095562899568/image.png)
+
 
 ## ANGGOTA KEL 7
 1. 21081010254 Shafira Zahrah Hidayat
