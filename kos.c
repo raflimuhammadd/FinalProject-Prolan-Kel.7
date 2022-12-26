@@ -136,14 +136,14 @@ int main(){
         printf("\t\t\t\t | [1] Pemilik                                 |\n");
         printf("\t\t\t\t | [2] Penyewa                                 |\n");
         printf("\t\t\t\t +=============================================+\n");
-        printf("\t\t\t\t ==> MASUKKAN PILIHAN SEBAGAI  :               ");
+        printf("\t\t\t\t ==> MASUKKAN PILIHAN SEBAGAI (1/2)  : ");
         scanf("%d", &pilih);
         if(pilih == 1){
             pemilik:
             system("cls");
             printf("\n\t\t\t\t +===============================================+\n");
-        	printf("\t\t\t\t |----------- J U R A G A N  K O S T ----------|\n");
-        	printf("\t\t\t\t +=============================================+\n");
+			printf("\t\t\t\t |----------- J U R A G A N  K O S T ----------|\n");
+			printf("\t\t\t\t +=============================================+\n");
 			printf("\t\t\t\t |            SELAMAT DATABG PEMILIK           |\n");
 			printf("\t\t\t\t +---------------------------------------------+\n");
             printf("\t\t\t\t | [1] Input kos                               |\n");
@@ -154,7 +154,8 @@ int main(){
             printf("\t\t\t\t | [6] Cari kos                                |\n");
             printf("\t\t\t\t | [7] Lihat kos Tersewa                       |\n");
             printf("\t\t\t\t | [0] Exit                                    |\n");
-            printf("\t\t\t\t ==> Masukkan Pilihan : ");
+			printf("\t\t\t\t +=============================================+\n");
+            printf("\t\t\t\t ==> MASUKKAN PILIHAN ANDA : ");
             scanf("%d", &pilih);
             if(pilih == 1){
                 input_pemilik();
