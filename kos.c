@@ -128,6 +128,17 @@ void jumpHarga(struct kos *sorts, int total, double cariharga){
 }
 
 
+<<<<<<< HEAD
+=======
+void fullscreen()
+{
+    keybd_event(VK_MENU,0x38,0,0);
+    keybd_event(VK_RETURN,0x1c,0,0);
+    keybd_event(VK_RETURN,0x1c,KEYEVENTF_KEYUP,0);
+    keybd_event(VK_MENU,0x38,KEYEVENTF_KEYUP,0);
+  //    return;
+}
+>>>>>>> 8947d062c2712d99fc94ecdaae2e2ebb2b80bea3
 
 
 int main(){
