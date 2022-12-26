@@ -147,8 +147,8 @@ int main(){
         printf("\n\t\t\t\t +==============================================+\n");
         printf("\t\t\t\t |----------- J U R A G A N  K O S T -----------|\n");
         printf("\t\t\t\t +==============================================+\n");
-		printf("\t\t\t\t |            SELAMAT DATANG PEMILIK            |\n");
-		printf("\t\t\t\t +----------------------------------------------+\n");
+	printf("\t\t\t\t |            SELAMAT DATANG PEMILIK            |\n");
+	printf("\t\t\t\t +----------------------------------------------+\n");
         printf("\t\t\t\t | [1] Input kos                                |\n");
         printf("\t\t\t\t | [2] Lihat kos                                |\n");
         printf("\t\t\t\t | [3] Update kos                               |\n");
@@ -245,7 +245,7 @@ int main(){
     else if(pilih == 2){
 		penyewa:
 		system("cls");
-        printf("\n\t\t\t\t +==============================================+\n");
+       		printf("\n\t\t\t\t +==============================================+\n");
 		printf("\t\t\t\t |----------- J U R A G A N  K O S T -----------|\n");
 		printf("\t\t\t\t +==============================================+\n");
 		printf("\t\t\t\t |                SELAMAT DATANG!               |\n");
@@ -1241,7 +1241,7 @@ void lihat_kamar_kosong(){
 	FILE *lihat_kamar_kosong;
 		int test=0;
 		lihat_kamar_kosong = fopen("JURAGANSEWA.txt","r");
-	  	printf("\n\t\t\t\t +===================================================+\n");
+	    printf("\n\t\t\t\t +===================================================+\n");
 	    printf("\t\t\t\t |-------------- J U R A G A N  K O S T ---------------|\n");
 	    printf("\t\t\t\t +=====================================================+\n");
 	    printf("\t\t\t\t |                     LIHAT DATA                      |\n");
@@ -1285,7 +1285,7 @@ void sewa_kos(){
     	jual = fopen("JURAGANSEWA.txt", "a");
 		
 	system("cls");
-    printf("\n\t\t\t\t +==============================================+\n");
+    	printf("\n\t\t\t\t +==============================================+\n");
 	printf("\t\t\t\t |----------- J U R A G A N  K O S T -----------|\n");
 	printf("\t\t\t\t +==============================================+\n");
 	printf("\t\t\t\t |                     SEWA KOS                 |\n");
