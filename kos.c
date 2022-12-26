@@ -391,7 +391,24 @@ void lihat_kos(){
 
 
 void update_kos(){
-    
+    int pilih,test=0, count = 0, i = 0, j;
+	FILE *lama,*baru;
+	lama = fopen("JURAGANKOS.txt","r");
+	baru = fopen("JURAGANBARU.txt","w");
+	system("cls");
+	printf("\n ====== JURAGAN KOST ======\n");
+	printf ("\nMasukan ID kos Yang Akan Diubah : ");
+	scanf ("%d",&cek.id);
+	while(fscanf(lama, "%d %d %[^;]; %d %lf",&kst.id, &kst.tipe, kst.alamat, &kst.jum_penghuni ,&kst.harga)!=EOF){
+		update[count].tipe = kst.tipe;
+		update[count].jum_penghuni = kst.jum_penghuni;
+		update[count].id = kst.id;
+		update[count].harga = kst.harga;
+		strcpy(update[count].alamat ,kst.alamat);
+		count++;
+	}
+
+
 }
 
 
