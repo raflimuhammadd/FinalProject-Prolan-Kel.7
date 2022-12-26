@@ -529,7 +529,66 @@ void update_kos(){
 
 
 void hapus_kos(){
-    //... (radit)
+    FILE *lama, *baru;
+    int test=0, count = 0;
+    lama = fopen("JURAGANKOS.txt","r");
+	baru = fopen("JURAGANBARU.txt","w");
+    system("cls");
+    printf("Input No.Id kos yang mau dihapus : ");
+    scanf("%d", &hapus.id);
+    while(fscanf(lama,"%d %d %[^;]; %d %lf",&kst.id, &kst.tipe, kst.alamat, &kst.jum_penghuni , &kst.harga)!=EOF){
+        if(kst.id != hapus.id){
+            del[count].id = kst.id;
+            del[count].tipe = kst.tipe;
+            strcpy(del[count].alamat, kst.alamat);
+            del[count].jum_penghuni = kst.jum_penghuni;
+            del[count].harga = kst.harga;
+            fprintf(baru,"%d %d %s; %d %lf\n",del[count].id, del[count].tipe, del[count].alamat, del[count].jum_penghuni, del[count].harga);
+            count++;
+        }
+        else{
+            test++;
+            printf("\nData kos No ID : %d dengan Alamat : %s\n",kst.id,kst.alamat);
+			printf("\nBerhasil dihapus dari Daftar !");
+            count++;
+        }
+    }
+    memset(&del, 0, sizeof(del));
+    fclose(lama);
+	fclose(baru);
+	remove("JURAGANKOS.txt");
+	rename("JURAGANBARU.txt","JURAGANKOS.txt");
+	if(test==0){   
+		system("cls");
+        printf("\nData tidak ditemukan !\a\a\a");
+        edit_invalid:
+        printf("\nInput 0 untuk mencoba lagi, 1 untuk ke menu utama dan 2 untuk keluar :");
+        switch(getch()){
+            case '0': hapus_kos();
+            	break;
+            case '1': main();
+            	break;
+            case '2': close();
+            	break;
+            default:printf("\nMaaf Kesalahan Input !");
+            	getche();
+            	goto edit_invalid;
+        }
+    }else{
+    	edit_valid:
+		printf("\n\n\nInput 1 untuk ke menu utama, 2 hapus lagi, dan 0 untuk keluar :");
+        switch(getch()){
+        	case '1': main();
+        		break;
+            case '2': hapus_kos();
+                break;
+        	case '0': close();
+        		break;
+        	default:printf("\nMaaf Kesalahan Input !");
+        		getche();
+        		goto edit_valid;
+           }
+	}
 }
 
 void sorttipe(){
