@@ -89,23 +89,22 @@
     - Exit
 
 # cara penggunaan aplikasi
-   - Compile kos.c untuk membuat file .exe
-   - Buka Aplikasi Juragan Kost.
-   - Pilih menu utama yang tersedia, yaitu pemilik atau penyewa kos.
-   - Jika (pemilik kos) dipilih, maka akan tersedia menu-menu berikut:
-     - Urutan berdasarkan Tipe
-     - Input: pemilik bisa menginputkan data kos yang akan disewakan
-     - Lihat Kos: pemilik bisa melihat daftar kos yang sudah diinputkan
-     - Ubah Kos: pemilik bisa mengubah data kos yang sudah diinputkan sebelumnya
-     - Hapus Kos: pemilik bisa menghapus kos yang sudah diinputkan
-     - Lihat Urutan: pemilik bisa melihat daftar kos yang sudah diinputkan secara terurut berdasarkan tipe, alamat, jumlah kamar, dan harga
-     - Cari Kos: pemilik bisa mencari kos berdasarkan tipe, alamat, dan harga
-     - Kos yang Tersewa: pemilik bisa melihat daftar kos yang sudah tersewa, dengan data terhubung secara otomatis dengan list sewa kos di menu penyewa
-     - Menu Exit: aplikasi akan keluar atau selesai
-
-   - Jika (penyewa kos) dipilih, maka akan tersedia menu-menu berikut:
-     - Lihat Kos: penyewa bisa melihat daftar kos yang tersedia, yang sudah diinputkan oleh pemilik sebelumnya
-     - Lihat Urutan: penyewa bisa melihat daftar kos yang tersedia secara terurut berdasarkan tipe, alamat, jumlah kamar, dan harga
-     - Cari Kos: penyewa bisa mencari kos berdasarkan tipe, alamat, dan harga
-     - Sewa Kos: penyewa bisa menyewa kos yang dipilih
-     - Menu Exit: aplikasi akan keluar atau selesai
+- Compile kos.c untuk membuat file .exe
+- Buka Aplikasi Juragan Kost.
+- Pilih menu utama yang tersedia, yaitu pemilik atau penyewa kos.
+- Jika (pemilik kos) dipilih, maka akan tersedia menu-menu berikut:
+ - Urutan berdasarkan Tipe
+ - Input: pemilik bisa menginputkan data kos yang akan disewakan
+ - Lihat Kos: pemilik bisa melihat daftar kos yang sudah diinputkan
+ - Ubah Kos: pemilik bisa mengubah data kos yang sudah diinputkan sebelumnya
+ - Hapus Kos: pemilik bisa menghapus kos yang sudah diinputkan
+ - Lihat Urutan: pemilik bisa melihat daftar kos yang sudah diinputkan secara terurut berdasarkan tipe, alamat, jumlah kamar, dan harga
+ - Cari Kos: pemilik bisa mencari kos berdasarkan tipe, alamat, dan harga
+ - Kos yang Tersewa: pemilik bisa melihat daftar kos yang sudah tersewa, dengan data terhubung secara otomatis dengan list sewa kos di menu penyewa
+ - Menu Exit: aplikasi akan keluar atau selesai
+- Jika (penyewa kos) dipilih, maka akan tersedia menu-menu berikut:
+ - Lihat Kos: penyewa bisa melihat daftar kos yang tersedia, yang sudah diinputkan oleh pemilik sebelumnya
+ - Lihat Urutan: penyewa bisa melihat daftar kos yang tersedia secara terurut berdasarkan tipe, alamat, jumlah kamar, dan harga
+ - Cari Kos: penyewa bisa mencari kos berdasarkan tipe, alamat, dan harga
+ - Sewa Kos: penyewa bisa menyewa kos yang dipilih
+ - Menu Exit: aplikasi akan keluar atau selesai
