@@ -421,6 +421,55 @@ void update_kos(){
                 		printf("\n[4] Harga kos");
 				printf("\nInput Pilihan : ");
 				scanf("%d",&pilih);
+				if(pilih == 1){
+					printf ("\nMasukan Tipe kos	: ");
+					fflush(stdin);
+					scanf ("%d", &cek.tipe);
+					update[i].tipe = cek.tipe;
+					for(j = 0; j < count; j++){
+						fprintf(baru, "%d %d %s; %d %lf \n",update[j].id, update[j].tipe ,update[j].alamat,update[j].jum_penghuni,update[j].harga);
+					}
+					printf ("\nPerubahan Sudah Disimpan !");
+					break;
+				}
+				else if(pilih == 2){
+					printf("\nMasukan Alamat kos	: ");
+					fflush(stdin);
+					gets(cek.alamat);
+					strcpy(update[i].alamat, cek.alamat);
+					for(j = 0; j < count; j++){
+						fprintf(baru, "%d %d %s; %d %lf \n",update[j].id, update[j].tipe ,update[j].alamat,update[j].jum_penghuni,update[j].harga);
+					}
+					printf ("\nPerubahan Sudah Disimpan !");
+					break;
+				}
+				else if(pilih == 3){
+					printf ("\nMasukan Jumlah Penghuni Kamar : ");
+					fflush(stdin);
+					scanf ("%d", &cek.jum_penghuni);
+					update[i].jum_penghuni = cek.jum_penghuni;
+					for(j = 0; j < count; j++){
+						fprintf(baru, "%d %d %s; %d %lf \n",update[j].id, update[j].tipe ,update[j].alamat,update[j].jum_penghuni,update[j].harga);
+					}
+					printf ("\nPerubahan Sudah Disimpan !");
+					break;
+				}
+				else if(pilih == 4){
+					printf ("\nMasukan Harga kos	: ");
+					fflush(stdin);
+					scanf ("%lf", &cek.harga);
+					update[i].harga = cek.harga;
+					for(j = 0; j < count; j++){
+						fprintf(baru, "%d %d %s; %d %lf \n",update[j].id, update[j].tipe ,update[j].alamat,update[j].jum_penghuni,update[j].harga);
+					}
+					printf ("\nPerubahan Sudah Disimpan !");
+					break;
+				}
+				else{
+					printf("\n\nInput Anda Salah !");
+                    			printf("\nKlik Enter untuk mengulang");
+                    			getche();
+				}
 
 }
 
