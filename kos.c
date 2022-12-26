@@ -130,27 +130,31 @@ int main(){
     menu:
 
     system("cls");
-        printf("\n\n\t\t\t\t +==========================================+\n");
-        printf("\t\t\t\t |-------------- JURAGAN KOST --------------|\n");
-        printf("\t\t\t\t +==========================================+\n");
-        printf("\t\t\t\t | [1] Pemilik                              |\n");
-        printf("\t\t\t\t | [2] Penyewa                              |\n");
-        printf("\t\t\t\t +==========================================+\n");
+        printf("\n\t\t\t\t +===============================================+\n");
+        printf("\t\t\t\t |----------- J U R A G A N  K O S T ----------|\n");
+        printf("\t\t\t\t +=============================================+\n");
+        printf("\t\t\t\t | [1] Pemilik                                 |\n");
+        printf("\t\t\t\t | [2] Penyewa                                 |\n");
+        printf("\t\t\t\t +=============================================+\n");
         printf("\t\t\t\t ==> MASUKKAN PILIHAN SEBAGAI  :               ");
         scanf("%d", &pilih);
         if(pilih == 1){
             pemilik:
             system("cls");
-            printf("\n ====== JURAGAN KOST ======\n");
-            printf("\n[1] Input kos");
-            printf("\n[2] Lihat kos");
-            printf("\n[3] Update kos");
-            printf("\n[4] Hapus kos");
-            printf("\n[5] Lihat urutan");
-            printf("\n[6] Cari kos");
-            printf("\n[7] Lihat kos Tersewa");
-            printf("\n[0] Exit");
-            printf("\n\n ==> Masukkan Pilihan : ");
+            printf("\n\t\t\t\t +===============================================+\n");
+        	printf("\t\t\t\t |----------- J U R A G A N  K O S T ----------|\n");
+        	printf("\t\t\t\t +=============================================+\n");
+			printf("\t\t\t\t |            SELAMAT DATABG PEMILIK           |\n");
+			printf("\t\t\t\t +---------------------------------------------+\n");
+            printf("\t\t\t\t | [1] Input kos                               |\n");
+            printf("\t\t\t\t | [2] Lihat kos                               |\n");
+            printf("\t\t\t\t | [3] Update kos                              |\n");
+            printf("\t\t\t\t | [4] Hapus kos                               |\n");
+            printf("\t\t\t\t | [5] Lihat urutan                            |\n");
+            printf("\t\t\t\t | [6] Cari kos                                |\n");
+            printf("\t\t\t\t | [7] Lihat kos Tersewa                       |\n");
+            printf("\t\t\t\t | [0] Exit                                    |\n");
+            printf("\t\t\t\t ==> Masukkan Pilihan : ");
             scanf("%d", &pilih);
             if(pilih == 1){
                 input_pemilik();
@@ -239,7 +243,7 @@ int main(){
 				lihat_kos();
 			}
 			else if(pilih == 2){
-				 system("cls");
+				system("cls");
                 printf("\n ====== JURAGAN KOST ======\n");
                 printf("\n[1] Urutan berdasarkan Tipe");
                 printf("\n[2] Urutan berdasarkan Alamat");
@@ -418,7 +422,7 @@ void update_kos(){
 				printf("\n[1] Tipe");
 				printf("\n[2] Alamat");
 				printf("\n[3] Jumlah Penghuni Kamar");
-                		printf("\n[4] Harga kos");
+                printf("\n[4] Harga kos");
 				printf("\nInput Pilihan : ");
 				scanf("%d",&pilih);
 				if(pilih == 1){
