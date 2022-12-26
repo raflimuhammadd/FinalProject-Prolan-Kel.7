@@ -467,10 +467,64 @@ void update_kos(){
 				}
 				else{
 					printf("\n\nInput Anda Salah !");
-                    			printf("\nKlik Enter untuk mengulang");
-                    			getche();
+                	printf("\nKlik Enter untuk mengulang");
+                   	getche();
 				}
+		}
+		else if(cek.id > sizeof(kst) || cek.id < update[0].id){
+			for(j = 0; j < count; j++){
+				fprintf(baru, "%d %d %s; %d %lf \n",update[j].id, update[j].tipe ,update[j].alamat,update[j].jum_penghuni,update[j].harga);
+			}
+			break;
+		}
+        	else if(cek.id != update[i].id && i == count){
+            		for(j = 0; j < count; j++){
+				fprintf(baru, "%d %d %s; %d %lf \n",update[j].id, update[j].tipe ,update[j].alamat,update[j].jum_penghuni,update[j].harga);
+			}
+			break;
+        	}
+		else{
+			i++;
+		}
+	}
 
+	memset(&update, 0, sizeof(update));
+	fclose(lama);
+	fclose(baru);
+	remove("JURAGANKOS.txt");
+	rename("JURAGANBARU.txt","JURAGANKOS.txt");
+	if(test!=1){   
+		system("cls");
+		printf("\nData tidak ditemukan !\a\a\a");
+		edit_invalid:
+		printf("\nInput 0 untuk mencoba lagi, 1 untuk ke menu utama dan 2 untuk keluar :");
+		switch(getch()){
+			case '0': update_kos();
+				break;
+			case '1': main();
+				break;
+			case '2': close();
+				break;
+			default:printf("\nMaaf Kesalahan Input !");
+				getche();
+				goto edit_invalid;
+        }
+    }
+    else{
+    	edit_valid:
+		printf("\n\n\nInput 1 untuk ke menu utama, 2 untuk update lagi, dan 0 untuk keluar :");
+		switch(getch()){
+		case '1': main();
+			break;
+		case '2': update_kos();
+			break;
+        case '0': close();
+			break;
+        default:printf("\nMaaf Kesalahan Input !");
+			getche();
+        	goto edit_valid;
+        }
+	}			
 }
 
 
@@ -618,6 +672,7 @@ void sortjumkamar(){
         }
     }
 }
+
 
 void sortharga(){
 	//... (radit)
