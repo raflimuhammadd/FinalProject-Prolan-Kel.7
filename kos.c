@@ -407,7 +407,20 @@ void update_kos(){
 		strcpy(update[count].alamat ,kst.alamat);
 		count++;
 	}
-
+	while(i <= count){
+		if(update[i].id == cek.id){
+			test=1;
+			ganti:
+				system("cls");
+				printf("\n ====== JURAGAN KOST ======\n");
+				printf("\nkos DENGAN ID : %d AKAN DIUPDATE!", update[i].id);
+				printf("\n\nData yang akan diganti : ");
+				printf("\n[1] Tipe");
+				printf("\n[2] Alamat");
+				printf("\n[3] Jumlah Penghuni Kamar");
+                		printf("\n[4] Harga kos");
+				printf("\nInput Pilihan : ");
+				scanf("%d",&pilih);
 
 }
 
