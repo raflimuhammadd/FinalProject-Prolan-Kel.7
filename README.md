@@ -20,7 +20,7 @@
 ![Screenshot (86)](https://cdn.discordapp.com/attachments/884240786227617822/1057022095562899568/image.png)
 
 
-## ANGGOTA KEL 7
+## ANGGOTA KELOMPOK 7
 1. 21081010254 Shafira Zahrah Hidayat
 2. 21081010255 Ahmad Wahyu Adi Putra
 3. 21081010258 Satria Farras Athallansyah
@@ -89,3 +89,26 @@
     - Exit
 
 # cara penggunaan aplikasi
+
+[1] Compile kos.c untuk membuat file .exe
+
+[2] Buka Aplikasi Juragan Kost.
+
+[3] Pilih menu utama yang tersedia, yaitu pemilik atau penyewa kos.
+
+[4] Jika pemilik kos dipilih, maka akan tersedia menu-menu berikut:
+    - Input: pemilik bisa menginputkan data kos yang akan disewakan
+    - Lihat Kos: pemilik bisa melihat daftar kos yang sudah diinputkan
+    - Ubah Kos: pemilik bisa mengubah data kos yang sudah diinputkan sebelumnya
+    - Hapus Kos: pemilik bisa menghapus kos yang sudah diinputkan
+    - Lihat Urutan: pemilik bisa melihat daftar kos yang sudah diinputkan secara terurut berdasarkan tipe, alamat, jumlah kamar, dan harga
+    - Cari Kos: pemilik bisa mencari kos berdasarkan tipe, alamat, dan harga
+    - Kos yang Tersewa: pemilik bisa melihat daftar kos yang sudah tersewa, dengan data terhubung secara otomatis dengan list sewa kos di menu penyewa
+    - Menu Exit: aplikasi akan keluar atau selesai
+
+[5] Jika penyewa kos dipilih, maka akan tersedia menu-menu berikut:
+    - Lihat Kos: penyewa bisa melihat daftar kos yang tersedia, yang sudah diinputkan oleh pemilik sebelumnya
+    - Lihat Urutan: penyewa bisa melihat daftar kos yang tersedia secara terurut berdasarkan tipe, alamat, jumlah kamar, dan harga
+    - Cari Kos: penyewa bisa mencari kos berdasarkan tipe, alamat, dan harga
+    - Sewa Kos: penyewa bisa menyewa kos yang dipilih
+    - Menu Exit: aplikasi akan keluar atau selesai
