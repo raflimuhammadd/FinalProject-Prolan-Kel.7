@@ -105,7 +105,7 @@ void jumpHarga(struct kos *sorts, int total, double cariharga){
         while((sorts[jumper].harga <= cariharga) && jumper < total){
             prev = jumper;
             jumper += jump;
-            
+
             if(jumper >= total + total){
                 printf("\t\t\t\t | Harga tidak ditemukan!");
             }
@@ -123,15 +123,25 @@ void jumpHarga(struct kos *sorts, int total, double cariharga){
         }
         else{
             printf("\t\t\t\t | Harga tidak ditemukan!");
-		}
-	}
+        }
+    }
+}
+
+
+void fullscreen()
+{
+    keybd_event(VK_MENU,0x38,0,0);
+    keybd_event(VK_RETURN,0x1c,0,0);
+    keybd_event(VK_RETURN,0x1c,KEYEVENTF_KEYUP,0);
+    keybd_event(VK_MENU,0x38,KEYEVENTF_KEYUP,0);
+  //    return;
 }
 
 
 int main(){
 	int pilih;
 	menu:
-	
+
 	system("cls");
     printf("\n\t\t\t\t +==============================================+\n");
     printf("\t\t\t\t |----------- J U R A G A N  K O S T -----------|\n");
@@ -147,8 +157,8 @@ int main(){
         printf("\n\t\t\t\t +==============================================+\n");
         printf("\t\t\t\t |----------- J U R A G A N  K O S T -----------|\n");
         printf("\t\t\t\t +==============================================+\n");
-	printf("\t\t\t\t |            SELAMAT DATANG PEMILIK            |\n");
-	printf("\t\t\t\t +----------------------------------------------+\n");
+		printf("\t\t\t\t |            SELAMAT DATANG PEMILIK            |\n");
+		printf("\t\t\t\t +----------------------------------------------+\n");
         printf("\t\t\t\t | [1] Input kos                                |\n");
         printf("\t\t\t\t | [2] Lihat kos                                |\n");
         printf("\t\t\t\t | [3] Update kos                               |\n");
@@ -160,7 +170,7 @@ int main(){
 		printf("\t\t\t\t +==============================================+\n");
         printf("\t\t\t\t ==> MASUKKAN PILIHAN ANDA : ");
         scanf("%d", &pilih);
-		
+
         if(pilih == 1){
 			input_pemilik();
 			goto menu;
@@ -205,7 +215,7 @@ int main(){
                 goto pemilik;
             }
         }
-		else if(pilih == 66)
+		else if(pilih == 6){
 			system("cls");
 			printf("\n\t\t\t\t +==============================================+\n");
 			printf("\t\t\t\t |----------- J U R A G A N  K O S T -----------|\n");
@@ -240,12 +250,12 @@ int main(){
         }
         else if(pilih == 0){
             exit(0);
-        }   
+        }
     }
     else if(pilih == 2){
 		penyewa:
 		system("cls");
-       		printf("\n\t\t\t\t +==============================================+\n");
+        printf("\n\t\t\t\t +==============================================+\n");
 		printf("\t\t\t\t |----------- J U R A G A N  K O S T -----------|\n");
 		printf("\t\t\t\t +==============================================+\n");
 		printf("\t\t\t\t |                SELAMAT DATANG!               |\n");
@@ -334,24 +344,24 @@ int main(){
 		erase_valid:
 		printf("\n\t\t\t\t | Input 1 (untuk ke menu utama) dan 0 (untuk keluar) : ");
     	switch(getch()){
-            case '1': 
+            case '1':
             main();
             break;
-            case '0': 
+            case '0':
             close();
             break;
             default:printf("\n\t\t\t\t | Maaf, terjadi Kesalahan pada Inputan!");
             getche();
             goto erase_valid;
         }
-			}
+	}
 }
 
 
 void input_pemilik(){
 	FILE *fptr, *fptr1;
 	int count=0;
-	
+
 	fptr=fopen("JURAGANKOS.txt","a");
 	system("cls");
 	fptr1=fopen("JURAGANKOS.txt","r");
@@ -381,10 +391,10 @@ void input_pemilik(){
 		add_invalid:
 		printf("\n\n\t\t\t\t | Enter 1 (untuk menu utama) dan 0 (untuk keluar) : ");
 		switch(getch()){
-			case '1': 
+			case '1':
 			main();
 			break;
-			case '0': 
+			case '0':
 			close();
         	break;
         	default:printf("\n\t\t\t\t | Maaf terjadi Kesalahan pada Inputan!");
@@ -392,7 +402,7 @@ void input_pemilik(){
         	goto add_invalid;
  		}
 	}
-	
+
  void lihat_kos(){
  	system("cls");
 	FILE *view;
@@ -421,10 +431,10 @@ void input_pemilik(){
 	printf("\t\t\t\t +----------------------------------------------+\n");
     printf("\n\t\t\t\t | Enter 1 (untuk menu utama) dan 0 (untuk keluar) : ");
   switch(getch()){
-		case '1': 
+		case '1':
       main();
       break;
-		case '0': 
+		case '0':
       close();
       break;
 		default:
@@ -465,7 +475,8 @@ void update_kos(){
 			printf("\t\t\t\t |----------- J U R A G A N  K O S T -----------|\n");
 			printf("\t\t\t\t +==============================================+\n");
 			printf("\t\t\t\t | kos DENGAN ID : %d AKAN DIUPDATE!            |\n", update[i].id);
-			printf("\n\t\t\t\t | Data yang akan diganti : ");
+			printf("\n\t\t\t\t | Data yang akan digati : ");
+
 			printf("\n\t\t\t\t | [1] Tipe                                   |\n");
 			printf("\n\t\t\t\t | [2] Alamat                                 |\n");
 			printf("\n\t\t\t\t | [3] Jumlah Penghuni Kamar                  |\n");
@@ -550,15 +561,15 @@ void update_kos(){
 		printf("\n\t\t\t\t | Maaf, Data tidak ditemukan !\a\a\a");
 			edit_invalid:
 		printf("\n\t\t\t\t | Input 0 (untuk mencoba lagi), 1 (untuk ke menu utama), dan 2 (untuk keluar) : ");
-		
+
     switch(getch()){
-			case '0': 
+			case '0':
         update_kos();
 			break;
-			case '1': 
+			case '1':
         main();
 			break;
-			case '2': 
+			case '2':
         close();
 			break;
 			default:printf("\n\t\t\t\t | Maaf terjadi Kesalahan pada Inputan!");
@@ -570,20 +581,20 @@ void update_kos(){
     edit_valid:
 	printf("\n\n\n\t\t\t\t | Input 0 (untuk mencoba lagi), 1 (untuk ke menu utama), dan 2 (untuk keluar) : ");
 	switch(getch()){
-		case '1': 
+		case '1':
 		main();
 		break;
-		case '2': 
+		case '2':
 		update_kos();
 		break;
-    case '0': 
+    case '0':
 	close();
 	break;
     default:printf("\n\t\t\t\t | Maaf, terjadi Kesalahan pada Inputan!");
 		getche();
     goto edit_valid;
     		}
-		}			
+		}
 }
 
 
@@ -592,7 +603,7 @@ void hapus_kos(){
 	int test=0, count = 0;
 	lama = fopen("JURAGANKOS.txt","r");
 	baru = fopen("JURAGANBARU.txt","w");
-	  
+
 	system("cls");
 	printf("\t\t\t\t | Input No.Id kos yang mau dihapus : ");
 	scanf("%d", &hapus.id);
@@ -624,13 +635,13 @@ void hapus_kos(){
 					edit_invalid:
 					printf("\n\t\t\t\t | Input 0 untuk mencoba lagi, 1 untuk ke menu utama dan 2 untuk keluar :");
 					switch(getch()){
-						case '0': 
+						case '0':
 						hapus_kos();
 						break;
-						case '1': 
+						case '1':
 						main();
 						break;
-						case '2': 
+						case '2':
 						close();
 						break;
 						default:
@@ -643,13 +654,13 @@ void hapus_kos(){
 					edit_valid:
 					printf("\n\n\n\t\t\t\t | Input 1 untuk ke menu utama, 2 hapus lagi, dan 0 untuk keluar :");
 					switch(getch()){
-						case '1': 
+						case '1':
 						main();
 						break;
-						case '2': 
+						case '2':
 						hapus_kos();
 						break;
-						case '0': 
+						case '0':
 						close();
 						break;
 						default:printf("\n\t\t\t\t | Maaf, terjadi Kesalahan pada Inputan!");
@@ -657,7 +668,7 @@ void hapus_kos(){
 						goto edit_valid;
 						}
 				}
-				
+
 }
 
 
@@ -696,7 +707,7 @@ void sorttipe(){
 	for(i=0;i<count;i++){
 		printf("\t\t\t\t | %d\t%d\t%s\t%d\t%.lf       | \n ", sorts[i].id, sorts[i].tipe, sorts[i].alamat, sorts[i].jum_penghuni, sorts[i].harga);
 	}
-	
+
 resetMemory();
 fclose(sortdata);
 if(test==0){
@@ -704,37 +715,37 @@ if(test==0){
     erase_invalid:
     printf("\n\t\t\t\t | Input 0 untuk mencoba lagi, 1 untuk ke menu utama and 2 untuk keluar :");
 	switch(getch()){
-		case '0': 
+		case '0':
 			sorttipe();
 			break;
-		case '1': 
+		case '1':
 			main();
 			break;
-		case '2': 
+		case '2':
 			close();
             break;
         default:printf("\n\t\t\t\t | Maaf, terjadi Kesalahan pada Inputan!");
 			getche();
 			goto erase_invalid;
 	}
-} 
+}
 else {
     erase_valid:
 	printf("\n\t\t\t\t | Input 1 untuk ke menu utama and 0 untuk keluar :");
     switch(getch()){
-		case '1': 
+		case '1':
 		main();
         break;
 
-		case '0': 
+		case '0':
 		close();
        	break;
-		
+
 		default:printf("\n\t\t\t\t | Maaf, terjadi Kesalahan pada Inputan!");
         getche();
 		goto erase_valid;
     }
-} 
+}
 
 }
 
@@ -754,7 +765,7 @@ void sortalamat(){
 		  strcpy(sorts[count].alamat ,kst.alamat);
 	  count++;
 	  test=1;
-	  }	
+	  }
 	  for(i = 1; i <= count; i++){
 		  sorts2[i] = sorts[i];
     	  j = i - 1;
@@ -770,7 +781,7 @@ void sortalamat(){
 	  printf("\t\t\t\t |                   LIHAT DATA                 |\n");
 	  printf("\t\t\t\t +----------------------------------------------+\n");
 	  printf("\t\t\t\t | %s\t%s\t%s\t%s\t%s      | \n\n", "ID","Tipe", "Alamat", "J.kamar", "Harga");
-	
+
     for(i = 1; i <= count; i++){
 		  printf("\t\t\t\t | %d\t%d\t%s\t%d\t%.lf      | \n", sorts[i].id, sorts[i].tipe, sorts[i].alamat, sorts[i].jum_penghuni, sorts[i].harga);
 		}
@@ -781,33 +792,33 @@ void sortalamat(){
 	  	erase_invalid:
         printf("\n\t\t\t\t | Input 0 untuk mencoba lagi, 1 untuk ke menu utama and 2 untuk keluar :");
 		switch(getch()){
-			case '0': 
+			case '0':
 			sortalamat();
 			break;
-			
-			case '1': 
+
+			case '1':
 			main();
 			break;
-			
-			case '2': 
+
+			case '2':
 			close();
 			break;
-		
+
 		default:
         printf("\n\t\t\t\t | Maaf, terjadi Kesalahan pada Inputan!");
         getche();
         goto erase_invalid;
 		}
-    } 
+    }
     else {
     erase_valid:
 	printf("\n\t\t\t\t | Input 1 untuk ke menu utama and 0 untuk keluar :");
       	switch(getch()){
-        case '1': 
+        case '1':
 		main();
 		break;
-		
-        case '0': 
+
+        case '0':
 		close();
         break;
         default:printf("\n\t\t\t\t | Maaf terjadi, Kesalahan pada Inputan!");
@@ -832,7 +843,7 @@ void sortjumkamar(){
 		    strcpy(sorts[count].alamat ,kst.alamat);
 		  count++;
 		  test=1;
-	  }	
+	  }
 	  for(i = 1; i <= count; i++){
 		  sorts2[i] = sorts[i];
     	  j = i - 1;
@@ -858,28 +869,28 @@ void sortjumkamar(){
               erase_invalid:
           printf("\n\t\t\t\t | Input 0 untuk mencoba lagi, 1 untuk ke menu utama and 2 untuk keluar :");
 			  switch(getch()){
-          case '0': 
+          case '0':
 					  sortjumkamar();
             break;
-          case '1': 
+          case '1':
 					  main();
             break;
-          case '2': 
+          case '2':
 				    close();
             break;
             default:printf("\n\t\t\t\t | Maaf terjadi Kesalahan pada Inputan!");
           getche();
             goto erase_invalid;
 			  }
-    } 
+    }
     else {
     erase_valid:
 		  printf("\n\t\t\t\t | Input 1 untuk ke menu utama and 0 untuk keluar :");
           switch(getch()){
-            case '1': 
+            case '1':
 			        main();
               break;
-            case '0': 
+            case '0':
 			        close();
               break;
             default:
@@ -905,9 +916,9 @@ void sortharga(){
 	strcpy(sorts[count].alamat ,kst.alamat);
 	count++;
 	test=1;
-		}	
+		}
 	  	mergesortharga(0, count);
-	 
+
 		printf("\n\t\t\t\t +==============================================+\n");
 		printf("\t\t\t\t |----------- J U R A G A N  K O S T -----------|\n");
 		printf("\t\t\t\t +==============================================+\n");
@@ -924,33 +935,33 @@ void sortharga(){
         erase_invalid:
 		printf("\n\t\t\t\t | Input 0 untuk mencoba lagi, 1 untuk ke menu utama and 2 untuk keluar :");
 		switch(getch()){
-			case '0': 
+			case '0':
 			sortharga();
             break;
-			
-			case '1': 
+
+			case '1':
 			main();
             break;
-			
-			case '2': 
+
+			case '2':
 			close();
             break;
-			
+
 			default:printf("\n\t\t\t\t | Maaf, terjadi Kesalahan pada Inputan!");
             getche();
             goto erase_invalid;
-			
-    	} 
+
+    	}
     }
     else {
       	erase_valid:
 			  printf("\n\t\t\t\t | Input 1 untuk ke menu utama and 0 untuk keluar :");
           	switch(getch())
             {
-				case '1': 
+				case '1':
 			    main();
 				  break;
-				case '0': 
+				case '0':
 			    close();
 				break;
 				default:
@@ -1004,22 +1015,22 @@ void cari_tipe(){
     printf("\t\t\t\t | Data Tipe tidak ditemukan");
   	}
 	resetMemory();
-	
+
 		fclose(cartip);
 		if(test==0){
         printf("\n\t\t\t\t | Maaf, Data tidak ditemukan !\a\a\a");
         erase_invalid:
         printf("\n\t\t\t\t | Input 0 untuk mencoba lagi, 1 untuk ke menu utama and 2 untuk keluar :");
 		switch(getch()){
-			case '0': 
+			case '0':
 			cari_tipe();
             break;
 
-			case '1': 
+			case '1':
 			main();
             break;
 
-			case '2': 
+			case '2':
 			close();
           	break;
 
@@ -1033,7 +1044,7 @@ void cari_tipe(){
 		erase_valid:
 		printf("\n\t\t\t\t | Input 1 untuk ke menu utama, 2 untuk coba lagi, and 0 untuk keluar :");
     switch(getch()){
-        case '1': 
+        case '1':
 		main();
        	break;
 
@@ -1041,7 +1052,7 @@ void cari_tipe(){
         cari_tipe();
         break;
 
-       	case '0': 
+       	case '0':
 		close();
        	break;
 
@@ -1070,18 +1081,18 @@ void cari_alamat(){
 			strcpy(sorts[count].alamat ,kst.alamat);
 			count++;
 			test=1;
-	  	}	
+	  	}
 	  	for(i = 1; i <= count; i++){
 			sorts2[i] = sorts[i];
 			j = i - 1;
-			
+
 		while(j >= 0 && (strcmp(sorts[j].alamat, sorts2[i].alamat) > 0)){
         	sorts[j+1] = sorts[j];
         	j--;
       	}
 			sorts[j+1] = sorts2[i];
 		}
-	
+
 		fflush(stdin);
 		printf("\n\t\t\t\t +==============================================+\n");
 		printf("\t\t\t\t |----------- J U R A G A N  K O S T -----------|\n");
@@ -1090,7 +1101,7 @@ void cari_alamat(){
 		printf("\t\t\t\t +----------------------------------------------+\n");
 		printf("\t\t\t\t ==> Masukkan Alamat yang Dicari : ");
 		gets(carialamat);
-		
+
 		int mid, low = 0, flag =0, high = count;
         while(low <= high && flag == 0){
 			mid = (low + high)/2;
@@ -1121,18 +1132,18 @@ void cari_alamat(){
 			erase_invalid:
 			printf("\n\t\t\t\t | Input 0 untuk mencoba lagi, 1 untuk ke menu utama and 2 untuk keluar :");
 		switch(getch()){
-			case '0': 
+			case '0':
 			cari_alamat();
         	break;
 
-			case '1': 
+			case '1':
 			main();
 			break;
-			
-			case '2': 
+
+			case '2':
 			close();
 			break;
-			
+
 		default:printf("\n\t\t\t\t | Maaf, terjadi Kesalahan pada Inputan!");
         getche();
         goto erase_invalid;
@@ -1142,15 +1153,15 @@ void cari_alamat(){
     erase_valid:
 	printf("\n\t\t\t\t | Input 1 untuk ke menu utama, 2 coba lagi, and 0 untuk keluar :");
 	switch(getch()){
-		case '1': 
+		case '1':
 		main();
        	break;
-        
+
 		case '2':
         cari_alamat();
         break;
-       	
-		case '0': 
+
+		case '0':
 		close();
        	break;
 
@@ -1189,59 +1200,59 @@ void cari_harga(){
 		jumpHarga(sorts, count, cariharga);
 		resetMemory();
 		fclose(hargaaa);
-		
+
 		if(count == 0){
 		printf("\n\t\t\t\t | Data tidak ditemukan !\a\a\a");
         erase_invalid:
         printf("\n\t\t\t\t | Input 0 untuk mencoba lagi, 1 untuk ke menu utama and 2 untuk keluar :");
 		switch(getch()){
-        	case '0': 
+        	case '0':
 			cari_harga();
             break;
 
-            case '1': 
+            case '1':
 			main();
             break;
-			
-            case '2': 
+
+            case '2':
 			close();
             break;
-			
+
         default:
         printf("\n\t\t\t\t | Maaf Kesalahan Input !");
         getche();
         goto erase_invalid;
 		}
-    } 
+    }
     else {
 		erase_valid:
 	printf("\n\t\t\t\t | Input 1 untuk ke menu utama, 2 untuk ulang, and 0 untuk keluar :");
 	switch(getch()){
-		case '1': 
+		case '1':
 		main();
        	break;
-		
+
 		case '2':
 		cari_harga();
 		break;
-		
-		case '0': 
+
+		case '0':
 		close();
 		break;
-		
+
 		default:printf("\n\t\t\t\t | Maaf Kesalahan Input !");
 		getche();
 		goto erase_valid;
     	}
 	}
 }
-	
+
 void lihat_kamar_kosong(){
 	system("cls");
 	FILE *lihat_kamar_kosong;
 		int test=0;
 		lihat_kamar_kosong = fopen("JURAGANSEWA.txt","r");
-	    printf("\n\t\t\t\t +===================================================+\n");
+	  	printf("\n\t\t\t\t +===================================================+\n");
 	    printf("\t\t\t\t |-------------- J U R A G A N  K O S T ---------------|\n");
 	    printf("\t\t\t\t +=====================================================+\n");
 	    printf("\t\t\t\t |                     LIHAT DATA                      |\n");
@@ -1253,7 +1264,7 @@ void lihat_kamar_kosong(){
 			}
 			printf("\n\n\t\t\t\t | Banyak kos Yang Terjual : %d ", test);
 			fclose(lihat_kamar_kosong);
-			
+
 			memset(&kst, 0, sizeof(kst));
 			if(test==0){
 				system("cls");
@@ -1262,20 +1273,20 @@ void lihat_kamar_kosong(){
 			list_invalid:
     		printf("\n\n\t\t\t\t | Enter 1 untuk menu utama dan 0 untuk keluar : ");
 			switch(getch()){
-				case '1': 
+				case '1':
 				main();
 				break;
-		
-				case '0': 
+
+				case '0':
 				close();
 				break;
-		
+
 				default:printf("\n\t\t\t\t | Maaf Kesalahan Input !");
 				getche();
 				goto list_invalid;
     		}
 }
-    
+
 
 void sewa_kos(){
 	FILE *lama, *baru, *jual;
@@ -1283,16 +1294,16 @@ void sewa_kos(){
 		lama = fopen("JURAGANKOS.txt","r");
 		baru = fopen("JURAGANBARU.txt","w");
     	jual = fopen("JURAGANSEWA.txt", "a");
-		
+
 	system("cls");
-    	printf("\n\t\t\t\t +==============================================+\n");
+    printf("\n\t\t\t\t +==============================================+\n");
 	printf("\t\t\t\t |----------- J U R A G A N  K O S T -----------|\n");
 	printf("\t\t\t\t +==============================================+\n");
 	printf("\t\t\t\t |                     SEWA KOS                 |\n");
 	printf("\t\t\t\t +----------------------------------------------+\n");
 	printf("\t\t\t\t ==> Input No.Id kos yang akan disewakan : ");
 	scanf("%d", &hapus.id);
-	
+
 	while(fscanf(lama,"%d %d %[^;]; %d %lf",&kst.id, &kst.tipe, kst.alamat, &kst.jum_penghuni , &kst.harga)!=EOF){
 		if(kst.id != hapus.id){
 			del[count].id = kst.id;
@@ -1317,7 +1328,7 @@ void sewa_kos(){
 			fprintf(jual,"%d %d %s; %d %lf %s; %lf\n",del[count].id, del[count].tipe, del[count].alamat, del[count].jum_penghuni, del[count].harga, del[count].nama, del[count].NIK);
 			count++;
 			test++;
-			
+
 			printf("\t\t\t\t | kos Telah Berhasil Disewa!");
 			}
 		else
@@ -1325,7 +1336,7 @@ void sewa_kos(){
 			test++;
 			printf("\n\t\t\t\t | Data kos No ID : %d dengan Alamat : %s\n",kst.id,kst.alamat);
 			printf("\n\t\t\t\t | Berhasil dihapus dari Daftar !");
-			
+
 			count++;
     	}
 	}
@@ -1335,25 +1346,25 @@ void sewa_kos(){
 		fclose(baru);
 		remove("JURAGANKOS.txt");
 		rename("JURAGANBARU.txt","JURAGANKOS.txt");
-		
+
 		if(test==0){
 			system("cls");
       		printf("\n\t\t\t\t | Maaf, Data tidak dapat ditemukan !\a\a\a");
         	edit_invalid:
 			printf("\n\t\t\t\t | Input 0 untuk mencoba lagi, 1 untuk ke menu utama dan 2 untuk keluar :");
 			switch(getch()){
-				case '0': 
+				case '0':
 				sewa_kos();
 				break;
-				
-				case '1': 
+
+				case '1':
 				main();
 				break;
 
-				case '2': 
+				case '2':
 				close();
 				break;
-				
+
 			default:
 			printf("\n\t\t\t\t | Maaf Kesalahan Input !");
 			getche();
@@ -1364,21 +1375,23 @@ void sewa_kos(){
 			edit_valid:
 			printf("\n\n\n\t\t\t\t | Input 1 untuk ke menu utama, 2 beli lagi, dan 0 untuk keluar :");
 			switch(getch()){
-				case '1': 
+				case '1':
 				main();
 				break;
-				
-				case '2': 
+
+				case '2':
 				sewa_kos();
 				break;
 
-				case '0': 
+				case '0':
 				close();
 				break;
-				
+
 			default:printf("\n\t\t\t\t | Maaf terdapat Kesalahan Input !");
         	getche();
         	goto edit_valid;
 		 }
 	}
 }
+
+
