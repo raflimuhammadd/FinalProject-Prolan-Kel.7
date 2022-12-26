@@ -592,7 +592,72 @@ void hapus_kos(){
 }
 
 void sorttipe(){
-	//... (radit)
+	system("cls");
+	FILE *sortdata;
+	int count=0,i,j,test=0,pilih;
+	system("cls");
+	sortdata=fopen("JURAGANKOS.txt","r");
+	while(fscanf(sortdata,"%d %d %[^;]; %d %lf",&kst.id, &kst.tipe, kst.alamat, &kst.jum_penghuni , &kst.harga)!=EOF) {
+		sorts[count].tipe = kst.tipe;
+		sorts[count].jum_penghuni = kst.jum_penghuni;
+		sorts[count].id = kst.id;
+		sorts[count].harga = kst.harga;
+		strcpy(sorts[count].alamat ,kst.alamat);
+		count++;
+		test=1;
+	}	
+	
+	printf("\n================ JURAGAN KOST ================\n\n");
+	printf("%s\t%s\t%s\t\t%s\t%s \n\n", "ID","Tipe", "Alamat", "J.kamar", "Harga");
+	for(i = 0; i < count; i++){
+		for(j = i + 1; j < count; j++){
+			if(sorts[i].tipe > sorts[j].tipe){
+				temp = sorts[j];
+				sorts[j] = sorts[i];
+				sorts[i] = temp;
+			}
+		}
+	}
+	for(i=0;i<count;i++){
+		printf("%d\t%d\t%s\t%d\t%.lf \n", sorts[i].id, sorts[i].tipe, sorts[i].alamat, sorts[i].jum_penghuni, sorts[i].harga);
+	}
+	
+    resetMemory();
+	fclose(sortdata);
+	if(test==0){
+            printf("\nData tidak ditemukan !\a\a\a");
+            erase_invalid:
+            printf("\nInput 0 untuk mencoba lagi, 1 untuk ke menu utama and 2 untuk keluar :");
+			switch(getch()){
+            	case '0': 
+					sorttipe();
+            		break;
+            	case '1': 
+					main();
+            		break;
+            	case '2': 
+					close();
+            		break;
+            	default:printf("\nMaaf Kesalahan Input !");
+            		getche();
+            		goto erase_invalid;
+			}
+    } else {
+    	erase_valid:
+		printf("\nInput 1 untuk ke menu utama and 0 untuk keluar :");
+        switch(getch()){
+       		case '1': 
+			   	main();
+       			break;
+       		case '0': 
+			   	close();
+       			break;
+       		default:printf("\nMaaf Kesalahan Input !");
+        		getche();
+        		goto erase_valid;
+           }
+	}
+
 }
 
 void sortalamat(){
