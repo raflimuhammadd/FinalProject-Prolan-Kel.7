@@ -1,5 +1,6 @@
 /*
 Final Project Pemrograman Lanjut E081
+Judul: JURAGAN KOST
 Kelompok 7
 Nama Anggota:
 	21081010254 Shafira Zahrah Hidayat
