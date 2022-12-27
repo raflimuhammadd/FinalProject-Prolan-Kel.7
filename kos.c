@@ -51,6 +51,8 @@ void resetMemory(){
     memset(&sorts2, 0, sizeof(sorts2));
 }
 
+
+//merge sort
 void sortingharga(int min, int mid, int maxx){
     int x, y, i = 0;
 	for(x = min, y = mid + 1, i = min; x <= mid && y <= maxx; i++){
